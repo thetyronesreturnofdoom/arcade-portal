@@ -1,6 +1,54 @@
 [
   {
     "id": 1,
+    "title": "Eaglercraft",
+    "category": "Adventure",
+    "description": "Minecraft 1.12.2 running entirely in your browser. Build, explore, and survive in full blocky glory.",
+    "emoji": "⛏️",
+    "image": "images/minecraft.png",
+    "color": "#5c8a2e",
+    "file": "Eaglercraft_1_12_2_WASM_Offline_Download.html",
+    "tags": ["sandbox", "survival", "adventure"],
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Drift Boss",
+    "category": "Racing",
+    "description": "Tap to drift around endless corners. One button, infinite skill ceiling. How far can you go?",
+    "emoji": "🚗",
+    "image": "images/driftboss.png",
+    "color": "#f5c400",
+    "file": "DriftBoss.html",
+    "tags": ["racing", "arcade", "action"],
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "Snow Rider 3D",
+    "category": "Arcade",
+    "description": "Sled down a never-ending snowy mountain. Dodge obstacles, collect gifts, and chase your high score.",
+    "emoji": "🛷",
+    "image": "images/snowrider.png",
+    "color": "#00c8ff",
+    "file": "SnowRider.html",
+    "tags": ["arcade", "runner", "3d"],
+    "featured": true
+  },
+  {
+    "id": 4,
+    "title": "Infinite Craft",
+    "category": "Puzzle",
+    "description": "Combine elements to discover new ones. Start with fire, water, wind, and earth — the rest is up to you.",
+    "emoji": "🔮",
+    "image": "images/infinitecraft.png",
+    "color": "#a855f7",
+    "file": "InfiniteCraft.html",
+    "tags": ["puzzle", "crafting", "creative"],
+    "featured": true
+  },
+  {
+    "id": 5,
     "title": "2048",
     "category": "Puzzle",
     "description": "Slide tiles to combine numbers and reach 2048. Addictively simple, brutally hard.",
@@ -8,21 +56,10 @@
     "color": "#f5a623",
     "url": "https://gabrielecirulli.github.io/2048/",
     "tags": ["puzzle", "numbers", "strategy"],
-    "featured": true
+    "featured": false
   },
   {
-    "id": 2,
-    "title": "Wordle",
-    "category": "Word",
-    "description": "Guess the 5-letter word in 6 tries. The viral word game everyone's talking about.",
-    "emoji": "🟩",
-    "color": "#6aaa64",
-    "url": "https://www.nytimes.com/games/wordle/index.html",
-    "tags": ["word", "daily", "brain"],
-    "featured": true
-  },
-  {
-    "id": 3,
+    "id": 6,
     "title": "Minesweeper",
     "category": "Classic",
     "description": "Clear the minefield without detonating any bombs. A timeless classic.",
@@ -33,7 +70,7 @@
     "featured": false
   },
   {
-    "id": 4,
+    "id": 7,
     "title": "Chess",
     "category": "Strategy",
     "description": "The ultimate game of strategy. Play against the computer at any skill level.",
@@ -41,54 +78,10 @@
     "color": "#8e44ad",
     "url": "https://www.chess.com/play/computer",
     "tags": ["strategy", "board", "classic"],
-    "featured": true
-  },
-  {
-    "id": 5,
-    "title": "Tetris",
-    "category": "Classic",
-    "description": "Stack falling blocks and clear lines in the legendary block-stacking game.",
-    "emoji": "🟦",
-    "color": "#2980b9",
-    "url": "https://tetris.com/play-tetris",
-    "tags": ["classic", "arcade", "action"],
-    "featured": false
-  },
-  {
-    "id": 6,
-    "title": "Pac-Man",
-    "category": "Arcade",
-    "description": "Chomp pellets and dodge ghosts in the most iconic arcade game of all time.",
-    "emoji": "👾",
-    "color": "#f1c40f",
-    "url": "https://freepacman.org/",
-    "tags": ["arcade", "classic", "action"],
-    "featured": false
-  },
-  {
-    "id": 7,
-    "title": "Crossword",
-    "category": "Word",
-    "description": "Daily crossword puzzles to sharpen your vocabulary and lateral thinking.",
-    "emoji": "📰",
-    "color": "#16a085",
-    "url": "https://www.nytimes.com/crosswords/game/mini",
-    "tags": ["word", "daily", "brain"],
     "featured": false
   },
   {
     "id": 8,
-    "title": "Sudoku",
-    "category": "Puzzle",
-    "description": "Fill the 9×9 grid so every row, column, and box contains 1–9. Pure logic.",
-    "emoji": "9️⃣",
-    "color": "#e67e22",
-    "url": "https://sudoku.com/",
-    "tags": ["puzzle", "numbers", "logic"],
-    "featured": false
-  },
-  {
-    "id": 9,
     "title": "Slither.io",
     "category": "Arcade",
     "description": "Grow your snake by eating glowing orbs. Avoid other snakes or you're done!",
@@ -96,10 +89,10 @@
     "color": "#27ae60",
     "url": "https://slither.io/",
     "tags": ["arcade", "multiplayer", "action"],
-    "featured": true
+    "featured": false
   },
   {
-    "id": 10,
+    "id": 9,
     "title": "Dino Run",
     "category": "Arcade",
     "description": "The beloved Chrome offline dinosaur game. Jump over cacti, dodge pterodactyls.",
@@ -110,18 +103,18 @@
     "featured": false
   },
   {
-    "id": 11,
-    "title": "Spades",
-    "category": "Cards",
-    "description": "Classic card game where you bid and take tricks with your partner.",
-    "emoji": "♠️",
-    "color": "#2c3e50",
-    "url": "https://www.spades.com/",
-    "tags": ["cards", "classic", "multiplayer"],
+    "id": 10,
+    "title": "Sudoku",
+    "category": "Puzzle",
+    "description": "Fill the 9×9 grid so every row, column, and box contains 1–9. Pure logic.",
+    "emoji": "9️⃣",
+    "color": "#e67e22",
+    "url": "https://sudoku.com/",
+    "tags": ["puzzle", "numbers", "logic"],
     "featured": false
   },
   {
-    "id": 12,
+    "id": 11,
     "title": "Mahjong",
     "category": "Puzzle",
     "description": "Match tiles to clear the board in this ancient Chinese tile-based game.",
@@ -129,6 +122,17 @@
     "color": "#c0392b",
     "url": "https://www.mahjong.co.uk/",
     "tags": ["puzzle", "classic", "strategy"],
+    "featured": false
+  },
+  {
+    "id": 12,
+    "title": "Pac-Man",
+    "category": "Arcade",
+    "description": "Chomp pellets and dodge ghosts in the most iconic arcade game of all time.",
+    "emoji": "👾",
+    "color": "#f1c40f",
+    "url": "https://freepacman.org/",
+    "tags": ["arcade", "classic", "action"],
     "featured": false
   }
 ]
