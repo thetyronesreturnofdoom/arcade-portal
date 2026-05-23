@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "title": "2048",
+    "category": "Puzzle",
+    "description": "Slide tiles to combine numbers and reach 2048. Addictively simple, brutally hard.",
+    "emoji": "🔢",
+    "color": "#f5a623",
+    "url": "https://gabrielecirulli.github.io/2048/",
+    "tags": ["puzzle", "numbers", "strategy"],
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Wordle",
+    "category": "Word",
+    "description": "Guess the 5-letter word in 6 tries. The viral word game everyone's talking about.",
+    "emoji": "🟩",
+    "color": "#6aaa64",
+    "url": "https://www.nytimes.com/games/wordle/index.html",
+    "tags": ["word", "daily", "brain"],
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "Minesweeper",
+    "category": "Classic",
+    "description": "Clear the minefield without detonating any bombs. A timeless classic.",
+    "emoji": "💣",
+    "color": "#c0392b",
+    "url": "https://minesweeper.online/",
+    "tags": ["classic", "logic", "strategy"],
+    "featured": false
+  },
+  {
+    "id": 4,
+    "title": "Chess",
+    "category": "Strategy",
+    "description": "The ultimate game of strategy. Play against the computer at any skill level.",
+    "emoji": "♟️",
+    "color": "#8e44ad",
+    "url": "https://www.chess.com/play/computer",
+    "tags": ["strategy", "board", "classic"],
+    "featured": true
+  },
+  {
+    "id": 5,
+    "title": "Tetris",
+    "category": "Classic",
+    "description": "Stack falling blocks and clear lines in the legendary block-stacking game.",
+    "emoji": "🟦",
+    "color": "#2980b9",
+    "url": "https://tetris.com/play-tetris",
+    "tags": ["classic", "arcade", "action"],
+    "featured": false
+  },
+  {
+    "id": 6,
+    "title": "Pac-Man",
+    "category": "Arcade",
+    "description": "Chomp pellets and dodge ghosts in the most iconic arcade game of all time.",
+    "emoji": "👾",
+    "color": "#f1c40f",
+    "url": "https://freepacman.org/",
+    "tags": ["arcade", "classic", "action"],
+    "featured": false
+  },
+  {
+    "id": 7,
+    "title": "Crossword",
+    "category": "Word",
+    "description": "Daily crossword puzzles to sharpen your vocabulary and lateral thinking.",
+    "emoji": "📰",
+    "color": "#16a085",
+    "url": "https://www.nytimes.com/crosswords/game/mini",
+    "tags": ["word", "daily", "brain"],
+    "featured": false
+  },
+  {
+    "id": 8,
+    "title": "Sudoku",
+    "category": "Puzzle",
+    "description": "Fill the 9×9 grid so every row, column, and box contains 1–9. Pure logic.",
+    "emoji": "9️⃣",
+    "color": "#e67e22",
+    "url": "https://sudoku.com/",
+    "tags": ["puzzle", "numbers", "logic"],
+    "featured": false
+  },
+  {
+    "id": 9,
+    "title": "Slither.io",
+    "category": "Arcade",
+    "description": "Grow your snake by eating glowing orbs. Avoid other snakes or you're done!",
+    "emoji": "🐍",
+    "color": "#27ae60",
+    "url": "https://slither.io/",
+    "tags": ["arcade", "multiplayer", "action"],
+    "featured": true
+  },
+  {
+    "id": 10,
+    "title": "Dino Run",
+    "category": "Arcade",
+    "description": "The beloved Chrome offline dinosaur game. Jump over cacti, dodge pterodactyls.",
+    "emoji": "🦕",
+    "color": "#7f8c8d",
+    "url": "https://chromedino.com/",
+    "tags": ["arcade", "runner", "action"],
+    "featured": false
+  },
+  {
+    "id": 11,
+    "title": "Spades",
+    "category": "Cards",
+    "description": "Classic card game where you bid and take tricks with your partner.",
+    "emoji": "♠️",
+    "color": "#2c3e50",
+    "url": "https://www.spades.com/",
+    "tags": ["cards", "classic", "multiplayer"],
+    "featured": false
+  },
+  {
+    "id": 12,
+    "title": "Mahjong",
+    "category": "Puzzle",
+    "description": "Match tiles to clear the board in this ancient Chinese tile-based game.",
+    "emoji": "🀄",
+    "color": "#c0392b",
+    "url": "https://www.mahjong.co.uk/",
+    "tags": ["puzzle", "classic", "strategy"],
+    "featured": false
+  }
+]

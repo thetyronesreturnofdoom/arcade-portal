@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARCADE PORTAL — Play Free Games Online</title>
+  <meta name="description" content="A curated collection of free browser games. Puzzle, arcade, strategy and more — all in one place." />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon emoji -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕹️</text></svg>" />
+</head>
+<body>
+
+  <!-- ══ HEADER ══════════════════════════════════════════ -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a class="logo" href="#">
+        <div class="logo-icon">🕹️</div>
+        <div>
+          <div class="logo-text">ARCADE</div>
+          <div class="logo-sub">PORTAL v1.0</div>
+        </div>
+      </a>
+
+      <!-- Search -->
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input
+          type="search"
+          id="search-input"
+          class="search-input"
+          placeholder="Search games…"
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </div>
+
+      <!-- Count badge -->
+      <div class="game-count-badge" id="game-count">
+        Loading…
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ══ MAIN ════════════════════════════════════════════ -->
+  <main class="main-container">
+
+    <!-- Hero -->
+    <section class="hero">
+      <span class="hero-eyebrow">// INSERT COIN TO CONTINUE</span>
+      <h1 class="hero-title">
+        <span class="highlight-green">FREE GAMES</span><br>
+        STRAIGHT TO YOUR<br>
+        <span class="highlight-pink">BROWSER</span>
+      </h1>
+      <p class="hero-subtitle">No downloads. No installs. Just play.</p>
+    </section>
+
+    <!-- Category Filters -->
+    <div class="filter-bar" id="filter-bar">
+      <!-- Populated by JS -->
+    </div>
+
+    <!-- Featured Games -->
+    <section class="featured-section" id="featured-section">
+      <div class="section-header">
+        <h2 class="section-title">⭐ Featured</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="featured-grid" id="featured-grid">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- All Games -->
+    <section>
+      <div class="section-header">
+        <h2 class="section-title">🎮 All Games</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="games-grid" id="all-games-grid">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- No Results -->
+    <div class="no-results" id="no-results">
+      <span class="no-results-icon">🔭</span>
+      <h3>No games found</h3>
+      <p>Try a different search term or category.</p>
+    </div>
+
+  </main>
+
+
+  <!-- ══ GAME MODAL ══════════════════════════════════════ -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-label="Game viewer">
+    <div class="modal-window" id="modal-window">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-emoji" id="modal-emoji">🎮</span>
+          <div>
+            <div class="modal-game-name"  id="modal-game-name">Game Title</div>
+            <div class="modal-game-category" id="modal-game-category">Category</div>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <a
+            id="modal-open-external"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="modal-btn modal-btn-outline"
+            title="Open in new tab"
+          >
+            ↗ <span>Open in Tab</span>
+          </a>
+          <button class="modal-btn modal-btn-close" id="modal-close" title="Close (Esc)">
+            ✕
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body — iframe -->
+      <div class="modal-body">
+
+        <!-- Loading spinner -->
+        <div class="iframe-loading" id="iframe-loading">
+          <div class="loading-spinner"></div>
+          <div class="loading-text">LOADING<span class="loading-dots"></span></div>
+        </div>
+
+        <!-- Blocked notice (shown if iframe can't load) -->
+        <div class="iframe-blocked" id="iframe-blocked">
+          <span class="blocked-icon">🚫</span>
+          <div class="blocked-title">THIS GAME BLOCKS EMBEDDING</div>
+          <p class="blocked-desc">
+            Some games prevent being shown inside other websites for security reasons.
+            You can still play it in a new tab!
+          </p>
+          <a
+            id="blocked-open-external"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="open-external-btn"
+          >
+            ▶ PLAY IN NEW TAB
+          </a>
+        </div>
+
+        <!-- The actual iframe -->
+        <iframe
+          id="game-iframe"
+          class="game-iframe"
+          src="about:blank"
+          title="Game"
+          allow="fullscreen; autoplay; gamepad"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-pointer-lock allow-top-navigation"
+        ></iframe>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══ FOOTER ══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    ARCADE PORTAL &nbsp;·&nbsp; Made with <span>♥</span> &nbsp;·&nbsp;
+    Edit <code>games.json</code> to add your own games
+  </footer>
+
+
+  <script src="app.js"></script>
+</body>
+</html>
