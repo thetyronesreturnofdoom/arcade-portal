@@ -55,7 +55,7 @@
     "emoji": "🐻",
     "image": "images/fnaf.png",
     "color": "#cc0000",
-    "url": "https://freezenova.com/db/html/fnaf/index.html",
+    "file": "FNAF.html",
     "tags": ["horror", "survival", "strategy"],
     "featured": true
   },
