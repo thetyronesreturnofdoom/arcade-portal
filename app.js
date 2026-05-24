@@ -189,7 +189,7 @@ function cardHTML(game, index, isRecent = false) {
   const isLocal   = !!game.file;
 
   const thumbContent = game.image
-    ? `<img src="${game.image}" alt="${game.title}" class="card-thumb-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+    ? `<img src="${game.image}" alt="${game.title}" class="card-thumb-img" onerror="this.style.display='none';this.nextElementSibling.style.removeProperty('display')">`
     : '';
 
   return `
@@ -303,6 +303,13 @@ function openModal(game) {
   const gameURL = game.file ? game.file : game.url;
   openExternal.href    = gameURL;
   openExternal.onclick = (e) => { e.preventDefault(); window.open(gameURL, '_blank'); };
+
+  // Local files get no sandbox (trusted); external games get restricted sandbox
+  if (game.file) {
+    iframe.removeAttribute('sandbox');
+  } else {
+    iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-popups allow-pointer-lock allow-top-navigation');
+  }
 
   // Open modal
   overlay.classList.add('open');
