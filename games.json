@@ -49,90 +49,14 @@
   },
   {
     "id": 5,
-    "title": "2048",
-    "category": "Puzzle",
-    "description": "Slide tiles to combine numbers and reach 2048. Addictively simple, brutally hard.",
-    "emoji": "🔢",
-    "color": "#f5a623",
-    "url": "https://gabrielecirulli.github.io/2048/",
-    "tags": ["puzzle", "numbers", "strategy"],
-    "featured": false
-  },
-  {
-    "id": 6,
-    "title": "Minesweeper",
-    "category": "Classic",
-    "description": "Clear the minefield without detonating any bombs. A timeless classic.",
-    "emoji": "💣",
-    "color": "#c0392b",
-    "url": "https://minesweeper.online/",
-    "tags": ["classic", "logic", "strategy"],
-    "featured": false
-  },
-  {
-    "id": 7,
-    "title": "Chess",
-    "category": "Strategy",
-    "description": "The ultimate game of strategy. Play against the computer at any skill level.",
-    "emoji": "♟️",
-    "color": "#8e44ad",
-    "url": "https://www.chess.com/play/computer",
-    "tags": ["strategy", "board", "classic"],
-    "featured": false
-  },
-  {
-    "id": 8,
-    "title": "Slither.io",
-    "category": "Arcade",
-    "description": "Grow your snake by eating glowing orbs. Avoid other snakes or you're done!",
-    "emoji": "🐍",
-    "color": "#27ae60",
-    "url": "https://slither.io/",
-    "tags": ["arcade", "multiplayer", "action"],
-    "featured": false
-  },
-  {
-    "id": 9,
-    "title": "Dino Run",
-    "category": "Arcade",
-    "description": "The beloved Chrome offline dinosaur game. Jump over cacti, dodge pterodactyls.",
-    "emoji": "🦕",
-    "color": "#7f8c8d",
-    "url": "https://chromedino.com/",
-    "tags": ["arcade", "runner", "action"],
-    "featured": false
-  },
-  {
-    "id": 10,
-    "title": "Sudoku",
-    "category": "Puzzle",
-    "description": "Fill the 9×9 grid so every row, column, and box contains 1–9. Pure logic.",
-    "emoji": "9️⃣",
-    "color": "#e67e22",
-    "url": "https://sudoku.com/",
-    "tags": ["puzzle", "numbers", "logic"],
-    "featured": false
-  },
-  {
-    "id": 11,
-    "title": "Mahjong",
-    "category": "Puzzle",
-    "description": "Match tiles to clear the board in this ancient Chinese tile-based game.",
-    "emoji": "🀄",
-    "color": "#c0392b",
-    "url": "https://www.mahjong.co.uk/",
-    "tags": ["puzzle", "classic", "strategy"],
-    "featured": false
-  },
-  {
-    "id": 12,
-    "title": "Pac-Man",
-    "category": "Arcade",
-    "description": "Chomp pellets and dodge ghosts in the most iconic arcade game of all time.",
-    "emoji": "👾",
-    "color": "#f1c40f",
-    "url": "https://freepacman.org/",
-    "tags": ["arcade", "classic", "action"],
-    "featured": false
+    "title": "Five Nights at Freddy's",
+    "category": "Horror",
+    "description": "Survive the night shift at Freddy Fazbear's Pizza. Watch the cameras, manage the power, and don't get caught.",
+    "emoji": "🐻",
+    "image": "images/fnaf.png",
+    "color": "#cc0000",
+    "url": "https://freezenova.com/db/html/fnaf/index.html",
+    "tags": ["horror", "survival", "strategy"],
+    "featured": true
   }
 ]
