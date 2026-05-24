@@ -58,5 +58,17 @@
     "url": "https://freezenova.com/db/html/fnaf/index.html",
     "tags": ["horror", "survival", "strategy"],
     "featured": true
+  },
+  {
+    "id": 6,
+    "title": "CS:GO Clicker",
+    "category": "Clicker",
+    "description": "Open cases, earn coins, and upgrade your arsenal in this addictive CS:GO-themed clicker game.",
+    "emoji": "🔫",
+    "image": "images/csgoclicker.png",
+    "color": "#f0a500",
+    "url": "https://d3rtzzzsiu7gdr.cloudfront.net/files/projects/csgo-clicker/index.html",
+    "tags": ["clicker", "idle", "csgo"],
+    "featured": true
   }
 ]
