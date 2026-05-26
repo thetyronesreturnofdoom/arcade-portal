@@ -5,7 +5,7 @@
     "category": "Adventure",
     "description": "Play Minecraft in your browser. Choose between the classic 1.12.2 offline build or the new 1.20 WASM-GC version.",
     "emoji": "⛏️",
-    "image": "images/minecraft.png",
+    "image": "",
     "color": "#5c8a2e",
     "file": "EaglerLauncher.html",
     "tags": ["sandbox", "survival", "minecraft"],
