@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "title": "Eaglercraft",
+    "title": "Eaglercraft Launcher",
     "category": "Adventure",
-    "description": "Minecraft 1.12.2 running entirely in your browser. Build, explore, and survive in full blocky glory.",
+    "description": "Play Minecraft in your browser. Choose between the classic 1.12.2 offline build or the new 1.20 WASM-GC version.",
     "emoji": "⛏️",
     "image": "images/minecraft.png",
     "color": "#5c8a2e",
-    "file": "Eaglercraft_1_12_2_WASM_Offline_Download.html",
-    "tags": ["sandbox", "survival", "adventure"],
+    "file": "EaglerLauncher.html",
+    "tags": ["sandbox", "survival", "minecraft"],
     "featured": true
   },
   {

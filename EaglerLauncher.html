@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eaglercraft Launcher</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #4ade80;
+      --dark-green: #166534;
+      --lime:       #a3e635;
+      --sky:        #0ea5e9;
+      --gold:       #fbbf24;
+      --red:        #ef4444;
+      --bg:         #0f172a;
+      --card:       #1e293b;
+      --border:     #334155;
+      --text:       #f1f5f9;
+      --muted:      #94a3b8;
+    }
+
+    body {
+      font-family: 'VT323', monospace;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Pixel grid */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(rgba(74,222,128,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(74,222,128,0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none; z-index: 0;
+    }
+
+    .pixel {
+      position: fixed; width: 8px; height: 8px;
+      background: var(--green); opacity: 0.12;
+      animation: floatPixel linear infinite;
+      pointer-events: none; z-index: 0;
+    }
+    @keyframes floatPixel {
+      0%   { transform: translateY(110vh) rotate(0deg);   opacity: 0; }
+      10%  { opacity: 0.12; }
+      90%  { opacity: 0.12; }
+      100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+    }
+
+    .container {
+      position: relative; z-index: 1;
+      width: 100%; max-width: 760px;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 24px;
+    }
+
+    /* Logo */
+    .logo-title {
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(16px, 4vw, 26px);
+      color: var(--green);
+      text-shadow: 3px 3px 0 var(--dark-green), 6px 6px 0 rgba(0,0,0,0.5);
+      text-align: center; letter-spacing: 2px; line-height: 1.5;
+      animation: titlePulse 3s ease-in-out infinite;
+    }
+    .logo-sub {
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(7px, 1.4vw, 10px);
+      color: var(--lime); text-align: center;
+      text-shadow: 2px 2px 0 var(--dark-green);
+      margin-top: 8px; letter-spacing: 1px;
+    }
+    @keyframes titlePulse {
+      0%,100% { text-shadow: 3px 3px 0 var(--dark-green), 6px 6px 0 rgba(0,0,0,0.5); }
+      50%      { text-shadow: 3px 3px 0 var(--dark-green), 6px 6px 0 rgba(0,0,0,0.5), 0 0 30px var(--green); }
+    }
+
+    /* Version cards grid */
+    .versions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      width: 100%;
+    }
+
+    @media (max-width: 560px) {
+      .versions-grid { grid-template-columns: 1fr; }
+    }
+
+    .ver-card {
+      background: var(--card);
+      border: 3px solid var(--border);
+      box-shadow: 6px 6px 0 rgba(0,0,0,0.5);
+      padding: 24px 20px;
+      display: flex; flex-direction: column; gap: 14px;
+      transition: border-color 0.15s;
+    }
+    .ver-card:hover { border-color: var(--green); }
+
+    .ver-badge {
+      display: inline-block;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px; padding: 5px 10px;
+      border: 2px solid; letter-spacing: 1px;
+      width: fit-content;
+    }
+    .ver-badge.v112 { background: rgba(14,165,233,0.15); color: var(--sky);  border-color: var(--sky); }
+    .ver-badge.v120 { background: rgba(74,222,128,0.15); color: var(--lime); border-color: var(--lime); }
+
+    .ver-title {
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(11px, 2vw, 15px);
+      color: var(--text); line-height: 1.4;
+    }
+
+    .ver-desc {
+      font-size: 19px; color: var(--muted); line-height: 1.4; flex: 1;
+    }
+
+    .ver-specs {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    }
+
+    .spec-item {
+      background: rgba(255,255,255,0.03);
+      border: 2px solid var(--border);
+      padding: 8px 10px;
+    }
+    .spec-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 6px; color: var(--muted);
+      letter-spacing: 1px; margin-bottom: 4px;
+    }
+    .spec-val { font-size: 17px; color: var(--lime); }
+
+    .launch-btn {
+      display: block; width: 100%; padding: 14px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(9px, 1.5vw, 12px);
+      letter-spacing: 1px; text-align: center;
+      cursor: pointer; border: none; outline: none;
+      position: relative; overflow: hidden;
+      transition: all 0.08s;
+    }
+    .launch-btn.v112 {
+      background: var(--sky); color: #0f172a;
+      border-bottom: 5px solid #0284c7;
+      border-right: 5px solid #0284c7;
+    }
+    .launch-btn.v112:hover { background: #38bdf8; }
+    .launch-btn.v120 {
+      background: var(--green); color: #0f172a;
+      border-bottom: 5px solid var(--dark-green);
+      border-right: 5px solid var(--dark-green);
+    }
+    .launch-btn.v120:hover { background: var(--lime); }
+    .launch-btn:active { transform: translate(3px,3px); border-bottom-width: 2px; border-right-width: 2px; }
+
+    /* Warning */
+    .warning {
+      background: rgba(146,64,14,0.2);
+      border: 2px solid #92400e;
+      padding: 12px 14px;
+      font-size: 17px; color: var(--gold); line-height: 1.5;
+      width: 100%;
+    }
+    .warning strong {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px; display: block; margin-bottom: 5px; color: #f59e0b;
+    }
+
+    /* Footer */
+    .footer { font-size: 15px; color: var(--muted); text-align: center; opacity: 0.5; }
+
+    /* Game overlay */
+    #game-overlay {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: #000; flex-direction: column;
+    }
+    #game-overlay.active { display: flex; }
+
+    .overlay-bar {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      padding: 8px 14px;
+      background: #0f172a;
+      border-bottom: 2px solid var(--green);
+      flex-shrink: 0; gap: 10px;
+    }
+    .overlay-title {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 9px; color: var(--green);
+    }
+    .overlay-actions { display: flex; gap: 8px; }
+
+    .overlay-btn {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px; padding: 6px 11px;
+      cursor: pointer; border: 2px solid; letter-spacing: 1px;
+    }
+    .fs-btn  { background: rgba(74,222,128,0.1); color: var(--green); border-color: var(--green); }
+    .fs-btn:hover { background: rgba(74,222,128,0.2); }
+    .cls-btn { background: rgba(239,68,68,0.15);  color: #fca5a5; border-color: #991b1b; }
+    .cls-btn:hover { background: rgba(239,68,68,0.3); }
+
+    #game-frame { flex: 1; border: none; width: 100%; }
+
+    .loading-msg {
+      position: absolute; inset: 50px 0 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 12px; color: var(--green);
+      pointer-events: none;
+      animation: titlePulse 1.5s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+    for (let i = 0; i < 18; i++) {
+      const p = document.createElement('div');
+      p.className = 'pixel';
+      p.style.left = Math.random() * 100 + 'vw';
+      p.style.animationDuration = (8 + Math.random() * 14) + 's';
+      p.style.animationDelay   = (Math.random() * 12) + 's';
+      const sz = (4 + Math.random() * 10) + 'px';
+      p.style.width = p.style.height = sz;
+      p.style.opacity = (0.05 + Math.random() * 0.12);
+      document.body.appendChild(p);
+    }
+  </script>
+
+  <div class="container">
+
+    <!-- Logo -->
+    <div>
+      <div class="logo-title">EAGLERCRAFT</div>
+      <div class="logo-sub">★ MULTI-VERSION LAUNCHER ★</div>
+    </div>
+
+    <!-- Warning -->
+    <div class="warning">
+      <strong>⚠ NOTE</strong>
+      1.12 runs fully offline from a local file. 1.20 requires an internet connection to load game assets from eaglercraft.dev.
+    </div>
+
+    <!-- Version cards -->
+    <div class="versions-grid">
+
+      <!-- 1.12 -->
+      <div class="ver-card">
+        <div class="ver-badge v112">STABLE</div>
+        <div class="ver-title">Eaglercraft 1.12.2</div>
+        <div class="ver-desc">The classic WASM offline build. Runs entirely from local files — no internet needed after loading.</div>
+        <div class="ver-specs">
+          <div class="spec-item">
+            <div class="spec-label">VERSION</div>
+            <div class="spec-val">1.12.2</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">RUNTIME</div>
+            <div class="spec-val">WASM</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">OFFLINE</div>
+            <div class="spec-val">✔ Yes</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">ACCOUNT</div>
+            <div class="spec-val">None</div>
+          </div>
+        </div>
+        <button class="launch-btn v112" onclick="launchGame('Eaglercraft_1_12_2_WASM_Offline_Download.html', '1.12.2')">▶ LAUNCH 1.12</button>
+      </div>
+
+      <!-- 1.20 -->
+      <div class="ver-card">
+        <div class="ver-badge v120">LATEST</div>
+        <div class="ver-title">Eaglercraft 1.20</div>
+        <div class="ver-desc">The new WASM-GC build with modern rendering. Requires internet to load assets from eaglercraft.dev.</div>
+        <div class="ver-specs">
+          <div class="spec-item">
+            <div class="spec-label">VERSION</div>
+            <div class="spec-val">1.20</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">RUNTIME</div>
+            <div class="spec-val">WASM-GC</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">OFFLINE</div>
+            <div class="spec-val">✔ Yes</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">ACCOUNT</div>
+            <div class="spec-val">None</div>
+          </div>
+        </div>
+        <button class="launch-btn v120" onclick="launchGame('eaglercraft_1_20.html', '1.20')">▶ LAUNCH 1.20</button>
+      </div>
+
+    </div>
+
+    <div class="footer">NOT AN OFFICIAL MINECRAFT PRODUCT · NOT AFFILIATED WITH MOJANG</div>
+  </div>
+
+  <!-- Game overlay -->
+  <div id="game-overlay">
+    <div class="overlay-bar">
+      <span class="overlay-title" id="overlay-title">▶ EAGLERCRAFT — RUNNING</span>
+      <div class="overlay-actions">
+        <button class="overlay-btn fs-btn" onclick="goFullscreen()" title="Fullscreen">⛶ FULLSCREEN</button>
+        <button class="overlay-btn cls-btn" onclick="closeGame()">✕ CLOSE</button>
+      </div>
+    </div>
+    <div class="loading-msg" id="loading-msg">LOADING GAME...</div>
+    <iframe id="game-frame" src="" allow="fullscreen; autoplay; gamepad"
+      sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-pointer-lock allow-downloads"
+      onload="document.getElementById('loading-msg').style.display='none'">
+    </iframe>
+  </div>
+
+  <script>
+    function launchGame(file, version) {
+      document.getElementById('overlay-title').textContent = '▶ EAGLERCRAFT ' + version + ' — RUNNING';
+      document.getElementById('loading-msg').style.display = 'flex';
+      document.getElementById('game-frame').src = file;
+      document.getElementById('game-overlay').classList.add('active');
+    }
+
+    function closeGame() {
+      document.getElementById('game-frame').src = '';
+      document.getElementById('game-overlay').classList.remove('active');
+    }
+
+    function goFullscreen() {
+      const frame = document.getElementById('game-frame');
+      if (frame.requestFullscreen)       frame.requestFullscreen();
+      else if (frame.webkitRequestFullscreen) frame.webkitRequestFullscreen();
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeGame(); });
+  </script>
+
+</body>
+</html>
