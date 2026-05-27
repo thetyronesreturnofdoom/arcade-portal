@@ -1,144 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ARCADE PORTAL — Play Free Games Online</title>
-  <meta name="description" content="A curated collection of free browser games. Puzzle, arcade, strategy and more — all in one place." />
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7wn5W577iPPC90ZXh0Pjwvc3ZnPg==" />
-</head>
-<body>
-
-  <!-- ══ HEADER ══ -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="logo" href="#">
-        <div class="logo-icon">🕹️</div>
-        <div>
-          <div class="logo-text">ARCADE</div>
-          <div class="logo-sub">PORTAL v1.0</div>
-        </div>
-      </a>
-      <div class="search-wrap">
-        <span class="search-icon">🔍</span>
-        <input type="search" id="search-input" class="search-input" placeholder="Search games…" autocomplete="off" spellcheck="false" />
-      </div>
-      <div class="game-count-badge" id="game-count">Loading…</div>
-    </div>
-  </header>
-
-  <!-- ══ MAIN ══ -->
-  <main class="main-container">
-
-    <!-- Hero -->
-    <section class="hero">
-      <span class="hero-eyebrow">// INSERT COIN TO CONTINUE</span>
-      <h1 class="hero-title">
-        <span class="highlight-green">FREE GAMES</span><br>
-        STRAIGHT TO YOUR<br>
-        <span class="highlight-pink">BROWSER</span>
-      </h1>
-      <p class="hero-subtitle">No downloads. No installs. Just play.</p>
-    </section>
-
-    <!-- Filters -->
-    <div class="filter-bar" id="filter-bar"></div>
-
-    <!-- Recently Played -->
-    <section class="recent-section" id="recent-section" style="display:none">
-      <div class="section-header">
-        <h2 class="section-title">🕐 Recently Played</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="recent-grid" id="recent-grid"></div>
-    </section>
-
-    <!-- Featured -->
-    <section class="featured-section" id="featured-section">
-      <div class="section-header">
-        <h2 class="section-title">⭐ Featured</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="featured-grid" id="featured-grid"></div>
-    </section>
-
-    <!-- All Games -->
-    <section>
-      <div class="section-header">
-        <h2 class="section-title" id="all-section-title">🎮 All Games</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="games-grid" id="all-games-grid"></div>
-    </section>
-
-    <!-- No Results -->
-    <div class="no-results" id="no-results">
-      <span class="no-results-icon">🔭</span>
-      <h3>No games found</h3>
-      <p>Try a different search term or category.</p>
-    </div>
-
-  </main>
-
-  <!-- ══ MODAL ══ -->
-  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
-    <div class="modal-window" id="modal-window">
-
-      <div class="modal-header">
-        <div class="modal-title-group">
-          <span class="modal-emoji" id="modal-emoji">🎮</span>
-          <div>
-            <div class="modal-game-name"     id="modal-game-name">Game Title</div>
-            <div class="modal-game-category" id="modal-game-category">Category</div>
-          </div>
-        </div>
-
-        <div class="modal-actions">
-          <button class="modal-btn modal-btn-fullscreen" id="modal-fullscreen" title="Fullscreen (F)">⛶ FULL</button>
-          <a id="modal-open-external" href="#" target="_blank" rel="noopener noreferrer"
-             class="modal-btn modal-btn-outline" title="Open in new tab">
-            ↗ <span>New Tab</span>
-          </a>
-          <button class="modal-btn modal-btn-close" id="modal-close" title="Close (Esc)">✕</button>
-        </div>
-      </div>
-
-      <div class="modal-body">
-        <div class="iframe-loading" id="iframe-loading">
-          <div class="loading-spinner"></div>
-          <div class="loading-text">LOADING<span class="loading-dots"></span></div>
-        </div>
-
-        <div class="iframe-blocked" id="iframe-blocked">
-          <span class="blocked-icon">🚫</span>
-          <div class="blocked-title">THIS GAME BLOCKS EMBEDDING</div>
-          <p class="blocked-desc">This game can't be shown inside another website. Open it in a new tab to play!</p>
-          <a id="blocked-open-external" href="#" target="_blank" rel="noopener noreferrer" class="open-external-btn">
-            ▶ PLAY IN NEW TAB
-          </a>
-        </div>
-
-        <iframe
-          id="game-iframe"
-          class="game-iframe"
-          src="about:blank"
-          title="Game"
-          allow="fullscreen; autoplay; gamepad"
-          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-pointer-lock allow-top-navigation"
-        ></iframe>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ FOOTER ══ -->
-  <footer class="site-footer">
-    ARCADE PORTAL &nbsp;·&nbsp; Made with <span>♥</span> &nbsp;·&nbsp;
-    Edit <code>games.json</code> to add your own games &nbsp;·&nbsp;
-    Press <code>F</code> to toggle fullscreen
-  </footer>
-
-  <script src="app.js"></script>
-</body>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Eaglercraft 1.20 test directory HTML page" />
+		<meta name="keywords" content="eaglercraft, eaglercraftx, minecraft, 1.20" />
+		<title>EaglercraftX 1.20.4</title>
+		<meta property="og:locale" content="en-US" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Eaglercraft 1.20" />
+		<meta property="og:description" content="test directory HTML page" />
+		<link type="image/png" rel="shortcut icon" href="favicon.png" />
+		<script type="text/javascript" src="classes.js"></script>
+		<script type="text/javascript">
+			"use strict";
+			window.addEventListener("load", () => {
+				if(document.location.href.startsWith("file:")) {
+					alert("HTTP please, do not open this file locally, run a local HTTP server and load it via HTTP");
+				}else {
+					const relayId = Math.floor(Math.random() * 3);
+					window.eaglercraftXOpts = {
+						demoMode: false,
+						container: "game_frame",
+						assetsURI: "assets.epk",
+						localesURI: "lang/",
+						worldsDB: "worlds",
+						logInvalidCerts: true,
+						servers: [
+							{ addr: "ws" + window.location.href.slice(4), name: "EaglercraftX  1.19 Server" }
+						],
+						relays: [
+							{ addr: "wss://relay.deev.is/", comment: "lax1dude relay #1", primary: relayId == 0 },
+							{ addr: "wss://relay.lax1dude.net/", comment: "lax1dude relay #2", primary: relayId == 1 },
+							{ addr: "wss://relay.shhnowisnottheti.me/", comment: "ayunami relay #1", primary: relayId == 2 }
+						]
+					};
+					
+					var q = window.location.search;
+					if(typeof q === "string" && q.startsWith("?")) {
+						q = new URLSearchParams(q);
+						var s = q.get("server");
+						if(s) window.eaglercraftXOpts.joinServer = s;
+					}
+					
+					main();
+				}
+			});
+		</script>
+	</head>
+	<body style="margin:0px;width:100vw;height:100vh;overflow:hidden;" id="game_frame">
+	</body>
 </html>

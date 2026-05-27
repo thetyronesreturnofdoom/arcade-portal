@@ -91,12 +91,13 @@
     /* Version cards grid */
     .versions-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 20px;
       width: 100%;
     }
 
-    @media (max-width: 560px) {
+    @media (max-width: 760px) { .versions-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) {
       .versions-grid { grid-template-columns: 1fr; }
     }
 
@@ -131,7 +132,7 @@
     }
 
     .ver-specs {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;
     }
 
     .spec-item {
@@ -255,7 +256,7 @@
     <!-- Warning -->
     <div class="warning">
       <strong>⚠ NOTE</strong>
-      1.12 runs fully offline from a local file. 1.20 requires an internet connection to load game assets from eaglercraft.dev.
+      1.12 runs fully offline from a local file. 1.20 requires internet to load from eaglercraft.dev. 1.20.4 runs fully offline from local files.
     </div>
 
     <!-- Version cards -->
@@ -311,6 +312,32 @@
           </div>
         </div>
         <button class="launch-btn v120" onclick="launchGame('eaglercraft_1_20.html', '1.20')">▶ LAUNCH 1.20</button>
+      </div>
+
+      <!-- 1.20.4 -->
+      <div class="ver-card">
+        <div class="ver-badge v120" style="border-color:#a3e635;color:#a3e635;background:rgba(163,230,53,0.15);">UPDATED</div>
+        <div class="ver-title">Eaglercraft 1.20.4</div>
+        <div class="ver-desc">The latest updated build with patches and improvements. Runs fully offline from local files.</div>
+        <div class="ver-specs">
+          <div class="spec-item">
+            <div class="spec-label">VERSION</div>
+            <div class="spec-val">1.20.4</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">RUNTIME</div>
+            <div class="spec-val">JS</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">OFFLINE</div>
+            <div class="spec-val">✔ Yes</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">ACCOUNT</div>
+            <div class="spec-val">None</div>
+          </div>
+        </div>
+        <button class="launch-btn v120" style="background:#a3e635;border-color:#4d7c0f;" onclick="launchGame('eaglercraft_1204/index.html', '1.20.4')">▶ LAUNCH 1.20.4</button>
       </div>
 
     </div>
